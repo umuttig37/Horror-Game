@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 12f;
+    public float speed = 10f;
     public float gravity = -9.81f;
 
     public Transform groundCheck;
@@ -17,9 +17,12 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-    
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
-    
+
     void Update()
 
     {
@@ -47,5 +50,14 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if(Input.GetKey (KeyCode.LeftShift))
+        {
+            speed = 20f;
+        }
+        else
+        {
+            speed = 10f;
+        }
     }
 }

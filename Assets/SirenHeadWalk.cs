@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SirenHeadWalk : MonoBehaviour
 {
-    public CharacterController controller;
+    CharacterController controller;
 
     public float gravity = -9.81f;
     public float speed = 3.0f;
@@ -13,13 +13,13 @@ public class SirenHeadWalk : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
 
-    Vector3 velocity;
+    Vector3 velocity;  
     bool isGrounded;
 
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
+        //controller = GetComponent<CharacterController>;
     }
     // Update is called once per frame
     void Update()
