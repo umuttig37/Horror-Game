@@ -14,9 +14,10 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     public float JumpHeight = 3f;
 
+
     Vector3 velocity;
     bool isGrounded;
-
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -27,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+
+        
 
 
         if(isGrounded && velocity.y < 0)
@@ -59,5 +63,10 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 10f;
         }
+
+         
     }
+    
+
+   
 }

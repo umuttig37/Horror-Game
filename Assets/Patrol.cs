@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Patrol : MonoBehaviour
 {
     public Transform[] waypoints;
@@ -11,17 +10,30 @@ public class Patrol : MonoBehaviour
 
     private int waypointIndex;
     private float dist;
-  
+
+    public Transform player;
+    private Vector3 movement;
+    public float distancee = 20.0f;
+
+
+    //public AudioSource chaseSound;
+   
+
+
+
     void Start()
     {
         waypointIndex = 0;
         transform.LookAt(waypoints[waypointIndex].position);
-        
+        //chaseSound = GetComponent<AudioSource>();
     }
-   
-   
+
+  
+
     void Update()
     {
+        float chasedistance = Vector3.Distance(transform.position, player.transform.position);
+
         dist = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
         if(dist < distance)
         {
@@ -29,8 +41,21 @@ public class Patrol : MonoBehaviour
         }
 
         Patroll();
-    }
 
+       
+
+        if (distancee > chasedistance)
+        {
+            transform.LookAt(player);
+            transform.position += transform.forward * speed * Time.deltaTime;
+            
+        }
+        
+
+    }
+    
+
+   
     void Patroll()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);

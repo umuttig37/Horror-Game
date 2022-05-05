@@ -22,7 +22,7 @@ public class SirenHeadWalk : MonoBehaviour
         //controller = GetComponent<CharacterController>;
     }
     // Update is called once per frame
-    void Update()
+   /* void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDisctance, groundMask);
 
@@ -43,7 +43,7 @@ public class SirenHeadWalk : MonoBehaviour
 
         
 
-    }
+    }*/
 
 
 }

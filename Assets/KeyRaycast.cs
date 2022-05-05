@@ -31,7 +31,7 @@ namespace KeySystem
 
             int mask = 1 << LayerMask.NameToLayer(excluseLayerName) | LayerMaskInteract.value;
 
-            if (Physics.Raycast(transform.position, fwd, out hit, rayLength, mask))
+           if (Physics.Raycast(transform.position, fwd, out hit, rayLength, mask))
             {
                 if (hit.collider.CompareTag(interactableTag))
                 {
@@ -53,11 +53,11 @@ namespace KeySystem
 
                 }
             }
-            else;
+            else
             {
                 if(isCrosshairActive)
                 {
-                    crosshairChange(false);
+                    CrosshairChange(false);
                     doOnce = false;
                 }
             }
@@ -69,6 +69,11 @@ namespace KeySystem
             if(on && !doOnce)
             {
                 crosshair.color = Color.red;
+            }
+            else
+            {
+                crosshair.color = Color.white;
+                isCrosshairActive = false;
             }
         }
     }

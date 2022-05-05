@@ -14,6 +14,8 @@ namespace KeySystem
 
         private KeyDoorController doorObject;
 
+       
+
         private void Start()
         {
             if (redDoor)
@@ -36,8 +38,7 @@ namespace KeySystem
             }
         }
 
-
-
+        
 
     }
 
