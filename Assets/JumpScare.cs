@@ -10,6 +10,7 @@ public class JumpScare : MonoBehaviour
     public GameObject FlashImg;
 
     public float jumpScareDistance = 2.0f;
+    public GameObject miniMapDeactivate;
   
 
 
@@ -27,6 +28,7 @@ public class JumpScare : MonoBehaviour
             ThePlayer.SetActive(false);
             FlashImg.SetActive(true);
             StartCoroutine(EndJump());
+            miniMapDeactivate.SetActive(false);
             
         }
         
