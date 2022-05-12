@@ -24,6 +24,9 @@ namespace KeySystem
 
         private string interactableTag = "InteractiveObject";
 
+        public GameObject hasKey;
+        public GameObject hasNoKey;
+
         private void Update()
         {
             RaycastHit hit;
@@ -47,6 +50,8 @@ namespace KeySystem
                     if (Input.GetKeyDown(openDoorKey))
                     {
                         raycastedObject.ObjectInteraction();
+                        hasNoKey.SetActive(false);
+                        hasKey.SetActive(true);
                     }
 
 
