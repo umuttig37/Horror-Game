@@ -14,22 +14,15 @@ namespace KeySystem
         public GameObject hasNoKey;
 
         private void Update()
-        {
-            
-            
-                
-            
+        {           
 
             if(hasRedKey)
             {
-                hasRedKey = true;
                 hasNoKey.SetActive(true);
                 Debug.Log("has key");
             }
-            else if(hasRedKey)
-            {
-
-                hasRedKey = true; 
+            else
+            { 
                 Debug.Log("has key");  
                 
                 haskey.SetActive(true);

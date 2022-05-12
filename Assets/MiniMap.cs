@@ -5,13 +5,14 @@ using UnityEngine;
 public class MiniMap : MonoBehaviour
 {
     public Transform player;
+    [SerializeField] private float height;
 
     private void LateUpdate()
     {
         Vector3 newPosition = player.position;
-        newPosition.y = transform.position.y;
+        newPosition.y += height;
         transform.position = newPosition;
 
-        transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+        //transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
     }
 }
