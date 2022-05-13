@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class JumpScare : MonoBehaviour
 {
-    //public AudioSource Scream;
+    public AudioSource Scream;
+    public AudioClip clip;
     public GameObject ThePlayer;
     public GameObject JumpCam;
     public GameObject FlashImg;
@@ -23,7 +24,7 @@ public class JumpScare : MonoBehaviour
         if (jumpScareDistance > dist)
         {
 
-            //Scream.Play();
+            Scream.PlayOneShot(clip);
             JumpCam.SetActive(true);
             ThePlayer.SetActive(false);
             FlashImg.SetActive(true);
